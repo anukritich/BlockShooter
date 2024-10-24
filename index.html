@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Shooter </title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .class {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: green;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 100px;
+        }
+        button:hover {
+            background-color: greenyellow;
+        }
+        canvas {
+            
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="class">
+        <button id="startButton">Start Game</button>
+        <button id="pauseButton">Pause</button>
+        <h3>Score: <span id="scoreDisplay">0</span></h3>
+        <h3>Health: <span id="healthDisplay">3</span></h3>
+    </div>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>
