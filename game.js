@@ -14,6 +14,9 @@ const PROJECTILE_HEIGHT = 0.06;
 const PROJECTILE_SPEED = 0.02;
 const SHOOTER_Y = -0.9;
 
+const fireSound = document.getElementById('fireSound');
+const destroySound = document.getElementById('destroySound');
+
 function init() {
     const canvas = document.getElementById('gameCanvas');
     gl = canvas.getContext('webgl');
@@ -69,6 +72,7 @@ function init() {
     document.getElementById('startButton').addEventListener('click', startGame);
     document.getElementById('pauseButton').addEventListener('click', pauseGame);
 }
+
 
 
 function startGame() {
@@ -134,6 +138,11 @@ function checkCollisions() {
                 blocks.splice(bi, 1);
                 projectiles.splice(pi, 1);
                 score++;
+
+                // Play block destruction sound
+                destroySound.currentTime = 0; 
+                destroySound.play(); 
+
                 document.getElementById('scoreDisplay').innerText = score;
             }
         });
@@ -150,6 +159,7 @@ function checkCollisions() {
 }
 
 
+
 function spawnBlock() {
     if (isGameRunning) {
         let x = Math.random() * 2 - 1;
@@ -163,8 +173,9 @@ function shootProjectile(target) {
   
     let velocityX = 0;  
     let velocityY = PROJECTILE_SPEED; 
-
-   
+    // Play firing sound
+    fireSound.currentTime = 0; 
+    fireSound.play(); 
     projectiles.push({ x: shooter.x, y: SHOOTER_Y, velocityX: velocityX, velocityY: velocityY });
 }
 
