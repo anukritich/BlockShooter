@@ -15,12 +15,13 @@ Welcome to the WebGL 2D Shooter Game! This project is a simple yet engaging shoo
 - Blocks fall from the top of the screen; shoot them to score points.
 - Game over when the player's health reaches zero.
 - Sound effects for shooting and block destruction.
-
+```
 ## Game Screenshot
 
-![Game Screenshot](game_screenshot.png)
+![Game Screenshot](https://github.com/anukritich/BlockShooter/blob/main/game_screenshot.png)
 
 
+```
 ## Getting Started
 
 ### Prerequisites
